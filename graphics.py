@@ -1,7 +1,7 @@
-from CircleLandGenerator import CircleLandGenerator
+from NewLandGenerator import NewLandGenerator
 from random import randint
 
-gen = CircleLandGenerator(200,200)
+gen = NewLandGenerator(3000,1)
 gen.makeLand()
 
-gen.generateImage().show()
+gen.previewOneDimensional().show()
