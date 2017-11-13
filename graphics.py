@@ -1,8 +1,8 @@
 from NewLandGenerator import NewLandGenerator
 from random import randint
 
-gen = NewLandGenerator(1000,1)
+gen = NewLandGenerator(200,200)
 gen.makeLand()
-gen.normalizeLand()
+# gen.normalizeLand(3)
 
-gen.previewOneDimensional().show()
+gen.generateImage().show()

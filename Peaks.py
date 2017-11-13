@@ -1,4 +1,4 @@
-from random import randint
+from random import *
 
 class Peaks:
     # STATE_FLAT = 0
@@ -10,12 +10,14 @@ class Peaks:
 
         self.state_parameters = [
             (-1,1),
-            (-4,4),
+            (-10,10),
             (-1,3),
             (-2,5),
             (-3,1),
             (-5,2),
         ]
+
+        # seed(10001)
 
     def getRandInt(self):
         assert self.state < len(self.state_parameters)
