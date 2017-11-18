@@ -7,7 +7,6 @@ from Peaks import Peaks
 class RandomLandCutGenerator(LandCutGenerator):
     def makeLandCut(self, initial_height = 50):
         current_height = initial_height
-        self.max_height = current_height
         peaks = Peaks()
         peaks.state = 1
 
@@ -16,11 +15,6 @@ class RandomLandCutGenerator(LandCutGenerator):
         for index in range(self.size):
             current_height += peaks.getRandInt()
             self.arr.append(current_height)
-
-            if current_height > self.max_height:
-                self.max_height = current_height
-
-
 
     def applySmoothing(self, window_radius = 2):
         new_arr = []
