@@ -1,8 +1,8 @@
-from NewLandGenerator import NewLandGenerator
-from random import randint
+from RandomLandCutGenerator import *
 
-gen = NewLandGenerator(200,200)
-gen.makeLand()
-# gen.normalizeLand(3)
+gen = RandomLandCutGenerator(200)
+gen.applySmoothing(5)
+
+gen.makeLandCut()
 
 gen.generateImage().show()
