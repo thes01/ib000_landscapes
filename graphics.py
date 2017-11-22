@@ -10,15 +10,15 @@ from CombineLandGenerator import *
 
 landcut_horizontal = SineLandCutGenerator(300, 5, 100)
 landcut_vertical = SineLandCutGenerator(300, 10, 100)
-landcut_weights = SineLandCutGenerator(200, 5, 200)
+# landcut_weights = SineLandCutGenerator(200, 5, 200)
 
 landcut_horizontal.makeLandCut()
 landcut_vertical.makeLandCut()
-landcut_weights.makeLandCut()
+# landcut_weights.makeLandCut()
 
 # # landcut_vertical.generateImage().show()
 
-final = CombineLandGenerator(landcut_horizontal, landcut_vertical, landcut_weights)
+final = CombineLandGenerator(landcut_horizontal, landcut_vertical)
 final.makeLand()
 
 final.generateImage().show()

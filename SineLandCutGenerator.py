@@ -28,8 +28,6 @@ class SineLandCutGenerator(LandCutGenerator):
                 if self.isInRange(start_index + i):
                     self.arr[start_index + i] = int(round(sine_values[i]))
 
-        print(self.arr)
-
     def generatePeaks(self):
         assert self.n_peaks < self.size
 

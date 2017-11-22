@@ -3,10 +3,10 @@ from LandCutGenerator import *
 from LandGenerator import *
 
 class CombineLandGenerator(LandGenerator):
-    def __init__(self, lcg_horizontal: LandCutGenerator, lcg_vertical: LandCutGenerator, lcg_weights: LandCutGenerator):
+    def __init__(self, lcg_horizontal: LandCutGenerator, lcg_vertical: LandCutGenerator):
         self.lcg_horizontal = lcg_horizontal
         self.lcg_vertical = lcg_vertical
-        self.lcg_weights = lcg_weights
+        # self.lcg_weights = lcg_weights
 
         super().__init__(lcg_horizontal.size, lcg_vertical.size)
 
