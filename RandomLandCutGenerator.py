@@ -4,8 +4,9 @@ from PIL import Image, ImageColor, ImageDraw
 from LandCutGenerator import LandCutGenerator
 from Peaks import Peaks
 
+
 class RandomLandCutGenerator(LandCutGenerator):
-    def makeLandCut(self, initial_height = 50):
+    def makeLandCut(self, initial_height=50):
         current_height = initial_height
         peaks = Peaks()
         peaks.state = 1
@@ -16,7 +17,7 @@ class RandomLandCutGenerator(LandCutGenerator):
             current_height += peaks.getRandInt()
             self.arr.append(current_height)
 
-    def applySmoothing(self, window_radius = 2):
+    def applySmoothing(self, window_radius=2):
         new_arr = []
 
         for index in range(len(self.arr)):
@@ -37,17 +38,3 @@ class RandomLandCutGenerator(LandCutGenerator):
             new_arr.append(_new_val // _count)
 
         self.arr = new_arr
-
-    # def makeLand(self):
-
-    #     horizontal = self.makeOneDimensional(self.width)
-    #     horizontal = self.applySmoothing(horizontal, 3)
-
-    #     vertical = self.makeOneDimensional(self.height)
-    #     vertical = self.applySmoothing(vertical, 3)
-
-    #     for _x in range(self.width):
-    #         for _y in range(self.height):
-    #             self.arr[_x,_y] = sqrt(horizontal[_x] * vertical[_y])
-
-    

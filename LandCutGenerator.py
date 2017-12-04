@@ -2,6 +2,7 @@ import numpy as np
 from math import sqrt, cos, pi, ceil
 from PIL import Image, ImageColor, ImageDraw
 
+
 class LandCutGenerator():
     def __init__(self, size):
         self.arr = np.zeros(size)
@@ -11,7 +12,8 @@ class LandCutGenerator():
         raise NotImplementedError()
 
     def isInRange(self, index):
-        if index < 0 or index >= self.size: return False
+        if index < 0 or index >= self.size:
+            return False
 
         return True
 
@@ -24,14 +26,14 @@ class LandCutGenerator():
 
         return int(ceil(__max))
 
-    def generateImage(self):    
+    def generateImage(self):
         max_height = self.getMaxHeight()
-    
+
         img = Image.new('RGB', (self.size, max_height))
         draw = ImageDraw.Draw(img)
 
         for index in range(self.size):
             _height = self.arr[index]
-            draw.line((index, max_height, index, max_height -_height), fill=(0, 255, 10))   
-            
+            draw.line((index, max_height, index, max_height - _height), fill=(0, 255, 10))
+
         return img

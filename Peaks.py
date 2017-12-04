@@ -1,5 +1,6 @@
 from random import *
 
+
 class Peaks:
     # STATE_FLAT = 0
     # STATE_DOWNHILL = 1
@@ -9,12 +10,12 @@ class Peaks:
         self.state = 0
 
         self.state_parameters = [
-            (-1,1),
-            (-2,2),
-            (-1,3),
-            (-2,5),
-            (-3,1),
-            (-5,2),
+            (-1, 1),
+            (-2, 2),
+            (-1, 3),
+            (-2, 5),
+            (-3, 1),
+            (-5, 2),
         ]
 
         # seed(10001)

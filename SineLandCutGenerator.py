@@ -2,8 +2,9 @@ from random import randint
 from math import pi, sin, ceil
 from LandCutGenerator import *
 
+
 class SineLandCutGenerator(LandCutGenerator):
-    discrete_sines = {} # a dictionary (cache) of key(number of steps) -> list(sine values)
+    discrete_sines = {}  # a dictionary (cache) of key(number of steps) -> list(sine values)
 
     def __init__(self, size, n_peaks: int, max_height: int):
         self.n_peaks = n_peaks
@@ -31,7 +32,7 @@ class SineLandCutGenerator(LandCutGenerator):
     def generatePeaks(self):
         assert self.n_peaks < self.size
 
-        step = ceil(self.size / self.n_peaks) # ceiling provides that the last point can be outside the area, must handle it in another function
+        step = ceil(self.size / self.n_peaks)  # ceiling provides that the last point can be outside the area, must handle it in another function
 
         peaks = []
 
@@ -48,7 +49,7 @@ class SineLandCutGenerator(LandCutGenerator):
         return self.max_height
 
     def getDiscreteSineValues(self, n: int, start_y: int, end_y: int):
-        # compute the sine function from pi/2 to 3pi/2 and normalize 
+        """ compute the sine function from pi/2 to 3pi/2 and normalize """
         if n not in self.discrete_sines:
             start_angle = pi / 2
             step = pi / n
@@ -72,4 +73,3 @@ class SineLandCutGenerator(LandCutGenerator):
             result.append(self.discrete_sines[n][i] * multiplier + middle_y)
 
         return result
-        
