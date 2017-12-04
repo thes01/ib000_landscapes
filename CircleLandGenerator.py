@@ -4,11 +4,11 @@ from LandGenerator import LandGenerator
 
 class CircleLandGenerator(LandGenerator):
     def makeLand(self):
-        for n in range(50):
-            _x = randint(0,199)
-            _y = randint(0,199)
+        for n in range(200):
+            _x = randint(0,299)
+            _y = randint(0,299)
             _size = randint(10,16) * 8
-            _height = randint(1, 9)
+            _height = randint(1, 15)
             self.addHill((_x,_y),_size,_height)
 
 

@@ -1,24 +1,25 @@
 from SineLandCutGenerator import *
 from CombineLandGenerator import *
 
-# gen = RandomLandCutGenerator(200)
-# gen.applySmoothing(5)
+from random import randint
 
-# gen.makeLandCut()
+for index in range(1, 11):
 
-# gen.generateImage().show()
+    max1 = randint(100,300)
+    max2 = randint(100,300)
 
-landcut_horizontal = SineLandCutGenerator(300, 5, 100)
-landcut_vertical = SineLandCutGenerator(300, 10, 100)
-# landcut_weights = SineLandCutGenerator(200, 5, 200)
+    n_peaks1 = randint(3,8)
+    n_peaks2 = randint(3,8)
 
-landcut_horizontal.makeLandCut()
-landcut_vertical.makeLandCut()
-# landcut_weights.makeLandCut()
+    landcut_horizontal = SineLandCutGenerator(300, n_peaks1, max1)
+    landcut_vertical = SineLandCutGenerator(300, n_peaks2, max2)
 
-# # landcut_vertical.generateImage().show()
+    landcut_horizontal.makeLandCut()
+    landcut_vertical.makeLandCut()
 
-final = CombineLandGenerator(landcut_horizontal, landcut_vertical)
-final.makeLand()
+    final = CombineLandGenerator(landcut_horizontal, landcut_vertical)
+    final.makeLand()
 
-final.generateImage().show()
+    final.generateImage().save('lands/land-{}-{}-{}-{}.bmp'.format(max1,max2,n_peaks1,n_peaks2))
+    print(index)
+
