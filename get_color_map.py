@@ -1,3 +1,5 @@
+""" generate nice transition between blue (lowest) and red (highest) """
+
 from PIL import Image, ImageColor
 
 with open('hues.txt', 'w') as hues:

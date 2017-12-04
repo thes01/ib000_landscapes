@@ -5,6 +5,7 @@ from LandGenerator import LandGenerator
 
 class CircleLandGenerator(LandGenerator):
     def makeLand(self):
+        """ add some hills to an empty field """
         for n in range(200):
             _x = randint(0, 299)
             _y = randint(0, 299)
@@ -37,6 +38,7 @@ class CircleLandGenerator(LandGenerator):
         return sqrt(delta_x**2 + delta_y**2)
 
     def mapDistance(self, distance, max_distance, max_value, easing="cos"):
+        """ map the distance to 0-max_value """
         if easing == "cos":
             cos_val = (distance / max_distance) * (pi / 2)
             return cos(cos_val) * max_value
