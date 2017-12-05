@@ -32,7 +32,8 @@ class SineLandCutGenerator(LandCutGenerator):
     def generatePeaks(self):
         assert self.n_peaks < self.size
 
-        step = ceil(self.size / self.n_peaks)  # ceiling provides that the last point can be outside the area, must handle it in another function
+        # ceiling provides that the last point can be outside the area, must handle it in another function
+        step = ceil(self.size / self.n_peaks)
 
         peaks = []
 
@@ -40,9 +41,6 @@ class SineLandCutGenerator(LandCutGenerator):
             peaks.append(randint(0, self.max_height))
 
         return peaks
-
-    def removeRedundantPeaks(self):
-        print("undefined")
 
     # override max height function because we already know that from the settings
     def getMaxHeight(self):

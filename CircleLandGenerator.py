@@ -14,10 +14,7 @@ class CircleLandGenerator(LandGenerator):
             self.addHill((_x, _y), _size, _height)
 
     def addHill(self, position, size, height, easing="cos"):
-        if position[0] < 0
-        or position[0] >= self.width
-        or position[1] < 0
-        or position[1] >= self.height:
+        if position[0] < 0 or position[0] >= self.width or position[1] < 0 or position[1] >= self.height:
             raise IndexError("Position out of canvas")
 
         radius = size // 2
@@ -28,10 +25,7 @@ class CircleLandGenerator(LandGenerator):
                 _x = left_top_corner[0] + hill_x
                 _y = left_top_corner[1] + hill_y
 
-                if _x >= 0
-                and _y >= 0
-                and _x < self.width
-                and _y < self.height:
+                if _x >= 0 and _y >= 0 and _x < self.width and _y < self.height:
                     dist = self.distance((_x, _y), position)
                     if dist <= radius:
                         val = self.mapDistance(dist, radius, height, easing)
