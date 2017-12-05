@@ -3,7 +3,7 @@ from CombineLandGenerator import *
 
 from random import randint
 
-for index in range(1, 11):
+for index in range(1, 10):
 
     max1 = randint(100, 300)
     max2 = randint(100, 300)
@@ -20,6 +20,7 @@ for index in range(1, 11):
     final = CombineLandGenerator(landcut_horizontal, landcut_vertical)
     final.makeLand()
 
-    final.generateImage().save('lands/land-{}-{}-{}-{}.bmp'.format(max1, max2, n_peaks1, n_peaks2))
+    # final.generateImage().save('lands/land-{}-{}-{}-{}.bmp'.format(max1, max2, n_peaks1, n_peaks2))
     print(index)
+    final.generateImage().show()
 
